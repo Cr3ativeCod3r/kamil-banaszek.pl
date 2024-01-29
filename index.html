@@ -108,7 +108,7 @@
     }
     .def
     {
-      margin-bottom: 0px;
+      margin-bottom: 0;
 
     }
   
@@ -135,6 +135,17 @@
  cursor: pointer;
  border-radius: 1px solid balck;
 }
+.container{
+  margin-bottom: 30px;
+}
+.cat {
+            width: 40px;
+            vertical-align: middle; /* Wyśrodkowanie wzdłuż osi pionowej */
+        }
+     .cat:hover{
+width: 48px;
+transition: 0.5s;
+        }
   </style>
 </head>
 
@@ -143,7 +154,7 @@
     <source src="video.mp4" type="video/mp4">
   </video>
 
-  <h1>Main projects</h1>
+  <h1>Main projects  <a href="https://github.com/Cr3ativeCod3r" target="_blank"><img src="github.png" class="cat"></a></h1>
   <h3>Deploy on AWS using nginx All rights reserved <a style="color: #bc7272;" >banaszekk123@gmail.com</a> 
    
     <button id="playButton" class="button" onclick="toggleMusic()">
@@ -185,10 +196,10 @@
     </div>
 
     <div class="project" onclick="location.href='retro';">
-      <div class="project-title">(beta version) I'm working on it</div>
-      <!-- <img src="PATH_TO_YOUR_IMAGE_3" alt="Project Image 3"> -->
-      <div class="project-description"></div>
-       <p>JavaFx reto games</p>    </div>
+      <div class="project-title">JavaFx retro games</div>
+    <img src="snake.png" alt="Project Image 3">
+      <div class="project-description">OOP programing in java with JavaFX framework im about, i plan to create my own game</div>
+      <p class="def">Desktop app project</p>  </div>
     <script>
       var playing = false;
       function toggleMusic() {
