@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="photo/k.png" sizes="32x32" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kamil</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      overflow: hidden; /* To hide overflowing content */
+    }
+
+    video {
+      object-fit: cover;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1; /* Set the z-index to make sure it's behind the other elements */
+      opacity: 85%;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+      padding: 12px;
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      max-width: 1200px;
+      margin: auto;
+      position: relative; /* Make the container a stacking context for z-index */
+      /* opacity: 10%; */
+   
+    }
+
+    .project {
+      border: 1px solid #805151;
+      border-radius: 10px;
+      background-color: #ddd;
+      width: calc(33.33% - 20px);
+      box-sizing: border-box;
+      
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+      padding: 10px;
+      min-height: 500px;
+
+/*      
+    margin-top: auto;
+    margin-bottom: auto; */
+    }
+
+    .project:hover {
+      transform: scale(1.05);
+    }
+
+    .project img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .project-title {
+      font-size: 24px;
+      margin: 15px 0;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .project-description {
+      font-size: 18px;
+      /* margin-bottom: 15px; */
+      color: #555;
+      margin-top: 20px;
+ 
+    }
+    h1,h3
+    {
+      text-align: center;
+      color: #ddd;
+      font-weight: bolder;
+    }
+    p
+    {
+      color: #875757;
+      font-weight:bold;
+    }
+    ul,li
+    {
+      text-align: left;
+    }
+
+    @media (max-width: 768px) {
+      .project {
+        width: 90%;
+      }
+      body { overflow: auto;}
+    }
+    .def
+    {
+      margin-bottom: 0px;
+
+    }
+  
+
+.button {
+    background-color: #001e73b3;
+    border-radius: 16px;
+    box-shadow: 0 0 2px #001E73;
+    color: #fff;
+    display: inline-block;
+    font-family: Arial,sans-serif;
+    font-size: 16px;
+    margin: 6px;
+    padding: 3px 17px;
+    text-decoration: none;
+    text-shadow: 0 0 2px #000;
+    border: 0;
+    transition: 0.2s;
+}
+.button:hover
+{
+  outline: #ddd;
+  background-color: #fff;
+ cursor: pointer;
+ border-radius: 1px solid balck;
+}
+  </style>
+</head>
+
+<body>
+  <video autoplay muted loop>
+    <source src="video.mp4" type="video/mp4">
+  </video>
+
+  <h1>Main projects</h1>
+  <h3>Deploy on AWS using nginx All rights reserved <a style="color: #bc7272;" >banaszekk123@gmail.com</a> 
+   
+    <button id="playButton" class="button" onclick="toggleMusic()">
+      Play Music 🎵
+    </button> </h3>
+    <audio id="music" src="audio.mp3">
+    </audio>
+  <div class="container">
+    
+    <div class="project" onclick="location.href='roulette';">
+      <div class="project-title">Roulette</div>
+      <img src="rou.png" alt="Project Image 1">
+      <div class="project-description">
+        <p></p>
+        <p></p>
+        Roulette with Steam login,
+        live betting with other players,
+        live chat,
+        betting history
+        <ul>
+          <li>React</li>
+          <li>Redux</li>
+          <li>Expressjs</li>
+          <li>Nodejs</li>
+          <li>Socket.io</li>
+          <li>Mysql</li>
+          </ul>
+      </div>
+     <p class="def">web project</p> 
+    </div>
+
+    <div class="project" onclick="location.href='tiktak';">
+      <div class="project-title">Min-max</div>
+      <img src="tik.png" alt="Project Image 1">
+      <div class="project-description">
+        Tic-tac-toe, player VS pc, min-max algorithm with alpha-beta pruning
+      </div>
+     <p class="def">algorithmic project</p> 
+    </div>
+
+    <div class="project" onclick="location.href='retro';">
+      <div class="project-title">(beta version) I'm working on it</div>
+      <!-- <img src="PATH_TO_YOUR_IMAGE_3" alt="Project Image 3"> -->
+      <div class="project-description"></div>
+       <p>JavaFx reto games</p>    </div>
+    <script>
+      var playing = false;
+      function toggleMusic() {
+        var music = document.getElementById('music');
+        var button = document.getElementById('playButton');
+        if (playing) {
+          music.pause();
+          button.textContent = 'Play Music 🎵';
+        } else {
+          music.play();
+          button.textContent = 'Stop Music 🎵';
+        }
+        playing = !playing;
+      }
+      </script>
+
+  </div>
+  
+</body>
+
+</html>
