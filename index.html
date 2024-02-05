@@ -7,13 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kamil</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-      overflow: hidden; /* To hide overflowing content */
-    }
+ 
 
     video {
       object-fit: cover;
@@ -23,41 +17,61 @@
       top: 0;
       left: 0;
       z-index: -1; /* Set the z-index to make sure it's behind the other elements */
-      opacity: 85%;
+      opacity: 75%;
     }
+    body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif; 
+  background-color: #f5f5f5;
+  color: #333;
+  overflow: hidden;
+  min-height: 100vh; /* Ensures body takes full viewport height */
+  display: flex;
+  flex-direction: column; /* Makes the body a flex container */
 
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      gap: 20px;
-      padding: 12px;
-      background-color: rgba(255, 255, 255, 0.8);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      max-width: 1200px;
-      margin: auto;
-      position: relative; /* Make the container a stacking context for z-index */
-      /* opacity: 10%; */
-   
-    }
+
+  justify-content: center; /* Centers the container vertically */
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 12px;
+  padding-bottom:50px; /* Dodaj 30px odstępu na dole */
+  background-color: #0F0C29;
+  /* background-color: #ddd; */
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 1200px;
+
+  position: relative;
+  height: 450px;
+
+  
+  
+}
+
+
 
     .project {
       border: 1px solid #805151;
       border-radius: 10px;
-      background-color: #ddd;
-      width: calc(33.33% - 20px);
+      background-color: #4E4E50;
+      /* background-color: #ddd; */
+
+      width: calc(25% - 20px);
       box-sizing: border-box;
-      
       text-align: center;
       cursor: pointer;
       transition: transform 0.3s ease-in-out;
       padding: 10px;
-      min-height: 500px;
+      min-height: 480px;
+      position: relative;
 
-/*      
-    margin-top: auto;
-    margin-bottom: auto; */
     }
 
     .project:hover {
@@ -73,30 +87,35 @@
     .project-title {
       font-size: 24px;
       margin: 15px 0;
-      color: #333;
+      color: #FFFFFF;
+      /* color: #333; */
       font-weight: bold;
+    }
+    .project p
+    {
+      text-align: center;
     }
 
     .project-description {
-      font-size: 18px;
-      /* margin-bottom: 15px; */
-      color: #555;
+      font-size: 15px;
+      color: #FFFFFF;
+      /* color: #333; */
       margin-top: 20px;
- 
     }
-    h1,h3
-    {
+
+    h1,h3 {
       text-align: center;
       color: #ddd;
       font-weight: bolder;
+      margin-top: 0;
     }
-    p
-    {
+
+    p {
       color: #875757;
       font-weight:bold;
     }
-    ul,li
-    {
+
+    ul,li {
       text-align: left;
     }
 
@@ -105,47 +124,69 @@
         width: 90%;
       }
       body { overflow: auto;}
+      .container
+      {
+        height: auto;
+      }
     }
-    .def
+
+
+
+
+    .button {
+      background-color: #001e73b3;
+      border-radius: 16px;
+      box-shadow: 0 0 2px #001E73;
+      color: #fff;
+      display: inline-block;
+      font-family: Arial,sans-serif;
+      font-size: 16px;
+      margin: 6px;
+      padding: 3px 17px;
+      text-decoration: none;
+      text-shadow: 0 0 2px #000;
+      border: 0;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      outline: #ddd;
+      background-color: #fff;
+      cursor: pointer;
+      border-radius: 1px solid black;
+    }
+
+    .cat {
+      width: 40px;
+      vertical-align: middle; /* Wyśrodkowanie wzdłuż osi pionowej */
+    }
+
+    .cat:hover {
+      width: 48px;
+      transition: 0.5s;
+    }
+    h3
     {
-      margin-bottom: 0;
+      margin-top: -20px;
+    }
+
+    .def {
+  margin-bottom: 0; 
+  color: #a6a2a2;
+ 
+ 
+}
+    .dolny
+    {
+      
+      position: absolute; 
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+ 
 
     }
-  
-
-.button {
-    background-color: #001e73b3;
-    border-radius: 16px;
-    box-shadow: 0 0 2px #001E73;
-    color: #fff;
-    display: inline-block;
-    font-family: Arial,sans-serif;
-    font-size: 16px;
-    margin: 6px;
-    padding: 3px 17px;
-    text-decoration: none;
-    text-shadow: 0 0 2px #000;
-    border: 0;
-    transition: 0.2s;
-}
-.button:hover
-{
-  outline: #ddd;
-  background-color: #fff;
- cursor: pointer;
- border-radius: 1px solid balck;
-}
-.container{
-  margin-bottom: 30px;
-}
-.cat {
-            width: 40px;
-            vertical-align: middle; /* Wyśrodkowanie wzdłuż osi pionowej */
-        }
-     .cat:hover{
-width: 48px;
-transition: 0.5s;
-        }
+    
   </style>
 </head>
 
@@ -164,12 +205,31 @@ transition: 0.5s;
     </audio>
   <div class="container">
     
+    <div class="project" onclick="location.href='tiktak';">
+      <div class="project-title">Look at my portfolio</div>
+      <img src="web.png" alt="Project Image 1">
+      <div class="project-description">
+        I made my portfolio in
+        <ul>
+          <li>Next.js</li>
+          <li>TypeScript</li>
+          <li>Tailwind CSS</li>
+        </ul>
+      </div>
+      <div class="dolny">
+        <p class="def">Web project</p> 
+      </div>
+    </div>
+    
+
+
     <div class="project" onclick="location.href='roulette';">
       <div class="project-title">Roulette</div>
       <img src="rou.png" alt="Project Image 1">
       <div class="project-description">
         <p></p>
         <p></p>
+        My biggest project on which I devoted many hours,
         Roulette with Steam login,
         live betting with other players,
         live chat,
@@ -181,9 +241,12 @@ transition: 0.5s;
           <li>Nodejs</li>
           <li>Socket.io</li>
           <li>Mysql</li>
-          </ul>
+        </ul>
       </div>
-     <p class="def">web project</p> 
+      <div class="dolny">
+        <p class="def">Web project</p> 
+      </div>
+   
     </div>
 
     <div class="project" onclick="location.href='tiktak';">
@@ -192,32 +255,39 @@ transition: 0.5s;
       <div class="project-description">
         Tic-tac-toe, player VS pc, min-max algorithm with alpha-beta pruning
       </div>
-     <p class="def">algorithmic project</p> 
+      <div class="dolny">
+     <p class="def">Algorithmic project</p> 
+     </div>
     </div>
+
+    
+
 
     <div class="project" onclick="location.href='retro';">
       <div class="project-title">JavaFx retro games</div>
     <img src="snake.png" alt="Project Image 3">
       <div class="project-description">OOP programing in java with JavaFX framework im about, i plan to create my own game</div>
-      <p class="def">Desktop app project</p>  </div>
+      <div class="dolny">
+      <p class="def">Desktop app project</p>  
+      </div>
+    </div>
     <script>
-      var playing = false;
+      // Pobierz elementy przycisku i audio
+      const playButton = document.getElementById('playButton');
+      const music = document.getElementById('music');
+
+      // Funkcja do przełączania odtwarzania muzyki
       function toggleMusic() {
-        var music = document.getElementById('music');
-        var button = document.getElementById('playButton');
-        if (playing) {
-          music.pause();
-          button.textContent = 'Play Music 🎵';
-        } else {
-          music.play();
-          button.textContent = 'Stop Music 🎵';
-        }
-        playing = !playing;
+          if (music.paused) {
+              // Jeśli muzyka jest wstrzymana, wznów odtwarzanie
+              music.play();
+              playButton.textContent = 'Pause Music ⏸️';
+          } else {
+              // Jeśli muzyka jest odtwarzana, wstrzymaj odtwarzanie
+              music.pause();
+              playButton.textContent = 'Play Music 🎵';
+          }
       }
-      </script>
-
+  </script>
   </div>
-  
-</body>
-
-</html>
+  </body>
