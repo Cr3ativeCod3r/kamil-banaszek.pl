@@ -16,7 +16,12 @@ import {
 } from 'react-icons/si';
 
 import { MdEmail } from 'react-icons/md';
-import { FaCode } from 'react-icons/fa'; 
+import { FaCode } from 'react-icons/fa';
+import {
+  HiPhone,
+  HiMapPin,
+  HiCheckCircle,
+} from 'react-icons/hi2';
 
 // Tech Stack Icons
 export const JsIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -68,4 +73,15 @@ export const GitHubIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 export const LeetCodeIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <FaCode {...props} />
+);
+
+// Extra Icons
+export const PhoneIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <HiPhone {...props} />
+);
+export const MapPinIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <HiMapPin {...props} />
+);
+export const CheckCircleIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <HiCheckCircle {...props} />
 );
