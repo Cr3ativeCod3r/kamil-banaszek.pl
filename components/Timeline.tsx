@@ -41,7 +41,7 @@ const TimelineCard: React.FC<{ item: TimelineItem; index: number }> = ({ item, i
               <div className="w-px h-20 bg-slate-700 mt-2"></div>
             )}
           </div>
-          <div className="bg-slate-800 rounded-lg shadow-lg px-4 flex-1">
+          <div className="bg-slate-800 rounded-lg shadow-lg px-4 py-4 flex-1">
             <p className="text-xs font-semibold text-sky-400 mb-1">{item.date}</p>
             <h3 className="font-bold text-white text-sm mb-1 leading-tight">{item.title}</h3>
             <h4 className="font-medium text-slate-300 text-xs mb-2">{item.company}</h4>

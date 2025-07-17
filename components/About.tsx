@@ -8,7 +8,7 @@ const About: React.FC = () => {
           <div className="md:col-span-2">
             <div className="relative">
               <img
-                src="https://picsum.photos/seed/fullstack-dev/600/600"
+                src="/ja.jpg"
                 alt="Kamil Banaszek, Full Stack Developer"
                 className="rounded-lg shadow-2xl w-full"
               />

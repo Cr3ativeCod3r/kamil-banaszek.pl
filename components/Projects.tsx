@@ -5,30 +5,28 @@ interface Project {
   name: string;
   description: string;
   image: string;
-  url: string;
+  url?: string; // <- url teraz opcjonalny
 }
 
 const projectsData: Project[] = [
   {
     id: 1,
     name: 'chorobymozgu.pl',
-    description: 'Kompleksowa platforma edukacyjna poświęcona chorobom neurologicznym. Zawiera szczegółowe informacje o objawach, diagnozach i metodach leczenia różnych schorzeń mózgu.',
-    image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop&crop=center',
+    description: 'A medical blog maintained by a foundation, featuring articles on brain health and research.',
+    image: '/fchm.png',
     url: 'https://chorobymozgu.pl'
   },
   {
     id: 2,
     name: 'korbank',
-    description: 'Nowoczesna aplikacja bankowa z intuicyjnym interfejsem użytkownika. Oferuje pełny zakres usług finansowych including przelewy, historia transakcji i zarządzanie kontami.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&crop=center',
-    url: 'https://korbank.com'
+    description: 'An inventory web app for a telecom company to manage equipment and fiber network infrastructure. ( inside project )',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&crop=center'
   },
   {
     id: 3,
-    name: 'kacperhyzy.pl',
-    description: 'Profesjonalne portfolio deweloperskie prezentujące projekty full-stack. Zawiera interaktywne demonstracje umiejętności w React, Node.js i nowoczesnych technologiach webowych.',
-    image: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=300&fit=crop&crop=center',
-    url: 'https://kacperhyzy.pl'
+    name: 'swiatnews.pl',
+    description: 'A news portal built with Next.js SSR, featuring dynamic content and SEO optimization per post.',
+    image: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=300&fit=crop&crop=center'
   },
 ];
 
@@ -51,17 +49,21 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
         <p className="text-gray-600 text-sm leading-relaxed mb-4">
           {project.description}
         </p>
-        <a
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center text-sky-600 hover:text-sky-700 font-medium text-sm transition-colors duration-200"
-        >
-          View Project
-          <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-          </svg>
-        </a>
+        {project.url ? (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-sky-600 hover:text-sky-700 font-medium text-sm transition-colors duration-200"
+          >
+            View Project
+            <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        ) : (
+          null
+        )}
       </div>
     </div>
   );
@@ -76,7 +78,7 @@ const Projects: React.FC = () => {
             Featured Projects
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover my latest web development projects showcasing modern technologies and innovative solutions
+            Discover my latest web development projects showcasing modern technologies and innovative solutions.
           </p>
         </div>
         
