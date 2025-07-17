@@ -34,14 +34,14 @@ const TimelineCard: React.FC<{ item: TimelineItem; index: number }> = ({ item, i
       <div className="md:hidden mb-8">
         <div className={`flex items-start ${isOdd ? 'flex-row-reverse' : ''}`}>
           <div className={`flex flex-col items-center ${isOdd ? 'ml-4' : 'mr-4'} flex-shrink-0`}>
-            <div className="w-6 h-6 bg-slate-700 rounded-full flex items-center justify-center">
+            <div className="w-6 h-6 bg-slate-700/50 border border-slate-600/50 rounded-full flex items-center justify-center">
               <div className="w-2 h-2 bg-sky-400 rounded-full"></div>
             </div>
             {index !== timelineData.length - 1 && (
-              <div className="w-px h-20 bg-slate-700 mt-2"></div>
+              <div className="w-px h-20 bg-slate-700/50 mt-2"></div>
             )}
           </div>
-          <div className="bg-slate-800 rounded-lg shadow-lg px-4 py-4 flex-1">
+          <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-xl shadow-lg px-4 py-4 flex-1">
             <p className="text-xs font-semibold text-sky-400 mb-1">{item.date}</p>
             <h3 className="font-bold text-white text-sm mb-1 leading-tight">{item.title}</h3>
             <h4 className="font-medium text-slate-300 text-xs mb-2">{item.company}</h4>
@@ -54,7 +54,7 @@ const TimelineCard: React.FC<{ item: TimelineItem; index: number }> = ({ item, i
       <div className="hidden md:flex justify-between items-center w-full mb-8">
         <div className="w-5/12">
           {!isOdd && (
-            <div className="bg-slate-800 rounded-lg shadow-xl px-6 py-4 transform transition-transform duration-300 hover:scale-105">
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-xl shadow-xl px-6 py-4 transform transition-all duration-300 hover:scale-105 hover:bg-slate-800/70">
               <p className="text-sm font-semibold text-sky-400">{item.date}</p>
               <h3 className="mb-2 font-bold text-white text-xl">{item.title}</h3>
               <h4 className="mb-3 font-semibold text-slate-300 text-md">{item.company}</h4>
@@ -63,13 +63,13 @@ const TimelineCard: React.FC<{ item: TimelineItem; index: number }> = ({ item, i
           )}
         </div>
         
-        <div className="z-20 flex items-center justify-center bg-slate-700 shadow-xl w-8 h-8 rounded-full">
+        <div className="z-20 flex items-center justify-center bg-slate-700/50 backdrop-blur-sm border border-slate-600/50 shadow-xl w-8 h-8 rounded-full">
           <div className="w-3 h-3 bg-sky-400 rounded-full"></div>
         </div>
         
         <div className="w-5/12">
           {isOdd && (
-            <div className="bg-slate-800 rounded-lg shadow-xl px-6 py-4 transform transition-transform duration-300 hover:scale-105">
+            <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-xl shadow-xl px-6 py-4 transform transition-all duration-300 hover:scale-105 hover:bg-slate-800/70">
               <p className="text-sm font-semibold text-sky-400">{item.date}</p>
               <h3 className="mb-2 font-bold text-white text-xl">{item.title}</h3>
               <h4 className="mb-3 font-semibold text-slate-300 text-md">{item.company}</h4>
@@ -84,16 +84,24 @@ const TimelineCard: React.FC<{ item: TimelineItem; index: number }> = ({ item, i
 
 const Timeline: React.FC = () => {
   return (
-    <section id="experience" className="py-16 md:py-32">
-      <div className="container mx-auto px-4 md:px-6">
+    <section id="experience" className="py-16 md:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-500 rounded-full filter blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-500 rounded-full filter blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-4xl font-bold text-white">Work Timeline</h2>
-          <p className="text-base md:text-lg text-slate-400 mt-2">My professional journey and key milestones.</p>
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 bg-gradient-to-r from-sky-400 to-purple-400 bg-clip-text text-transparent">
+            Work Timeline
+          </h2>
+          <p className="text-base md:text-lg text-slate-300 mt-2">My professional journey and key milestones.</p>
         </div>
         
         <div className="relative">
           {/* Desktop center line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-slate-700"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-slate-700/50"></div>
           
           {/* Timeline items */}
           <div>
