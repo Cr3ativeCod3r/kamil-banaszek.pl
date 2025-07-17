@@ -5,7 +5,7 @@ interface Project {
   name: string;
   description: string;
   image: string;
-  url?: string; // <- url teraz opcjonalny
+  url?: string; 
 }
 
 const projectsData: Project[] = [
@@ -75,7 +75,7 @@ const Projects: React.FC = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Featured Projects
+            Featured Projects ( to update )
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Discover my latest web development projects showcasing modern technologies and innovative solutions.
