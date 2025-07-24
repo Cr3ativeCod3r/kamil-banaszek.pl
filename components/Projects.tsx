@@ -24,9 +24,9 @@ const projectsData: Project[] = [
   },
   {
     id: 3,
-    name: 'swiatnews.pl',
-    description: 'A news portal built with Next.js SSR, featuring dynamic content and SEO optimization per post.',
-    image: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=300&fit=crop&crop=center'
+    name: 'Crash Game',
+    description: 'A web-based crash gambling game featuring real-time functionality (SignalR in C#), user authentication system (JWT), and a modern frontend built with React, TypeScript, and Zustand state management.',
+    image: '/casino.png'
   },
 ];
 
